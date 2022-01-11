@@ -10,6 +10,9 @@ import { VuetifyResolver } from 'unplugin-vue-components/resolvers'
  ******************/
 
 export default defineConfig({
+  server: {
+    port: 9999
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
@@ -29,6 +32,16 @@ export default defineConfig({
           // @import of the files themselves
           '@import "./src/styles/variables"',
           '@import "vuetify/src/styles/settings/_variables"',
+          '', // end with newline
+        ].join('\n'),
+      },
+
+      scss: {
+        additionalData: [
+          // Make the variables defined in these files available to all components, without requiring an explicit
+          // @import of the files themselves
+          '@import "./src/styles/variables";',
+          '@import "vuetify/src/styles/settings/_variables";',
           '', // end with newline
         ].join('\n'),
       },

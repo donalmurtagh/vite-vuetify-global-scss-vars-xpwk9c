@@ -27,7 +27,19 @@ h2 {
 
 @media #{map-get($display-breakpoints, 'md-and-down')} {
   h2 {
-    color: blue !important;
+    color: yellow !important;
   }
 }
 </style>
+
+
+<!--
+<style lang="sass">
+h2
+  color: $my-custom-color
+
+@media #{map-get($display-breakpoints, 'md-and-down')}
+  h2
+    color: yellow
+</style>
+-->
