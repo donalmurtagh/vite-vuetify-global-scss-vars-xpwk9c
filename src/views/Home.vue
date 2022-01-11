@@ -19,3 +19,15 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+h2 {
+  color: $my-custom-color;
+}
+
+@media #{map-get($display-breakpoints, 'md-and-down')} {
+  h2 {
+    color: blue !important;
+  }
+}
+</style>
